@@ -11,17 +11,14 @@ set +x
 echo 'The following complex command extracts the value of the <name/> element'
 echo 'within <project/> of your Java/Maven project''s "pom.xml" file.'
 set -x
-NAME=`mvn help:evaluate -Dexpression=project.name -q -DforceStdout`
+NAME='my-app'
 set +x
 
 echo 'The following complex command behaves similarly to the previous one but'
 echo 'extracts the value of the <version/> element within <project/> instead.'
 set -x
-VERSION=`mvn help:evaluate -Dexpression=project.version -q -DforceStdout`
+VERSION='1.0-SNAPSHOT'
 set +x
-
-RESULT=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
-echo $RESULT
 
 echo 'The following command runs and outputs the execution of your Java'
 echo 'application (which Jenkins built using Maven) to the Jenkins UI.'
