@@ -20,6 +20,9 @@ set -x
 VERSION=`mvn help:evaluate -Dexpression=project.version -q -DforceStdout`
 set +x
 
+RESULT=$(mvn help:evaluate -Dexpression=project.version -q -DforceStdout)
+echo $RESULT
+
 echo 'The following command runs and outputs the execution of your Java'
 echo 'application (which Jenkins built using Maven) to the Jenkins UI.'
 set -x
